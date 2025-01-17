@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нонсик</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .timer {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 20px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .button {
+            font-size: 40px;
+            padding: 20px 40px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .counter {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer" id="timerDisplay">Время на сайте: 0 сек.</div>
+    <div class="container">
+        <button class="button" id="nonsikButton">Нонсик</button>
+        <div class="counter" id="counterDisplay">Кликов: 0</div>
+    </div>
+
+    <script>
+        // Таймер
+        let seconds = 0;
+        const timerDisplay = document.getElementById('timerDisplay');
+
+        setInterval(() => {
+            seconds++;
+            timerDisplay.textContent = `Время на сайте: ${seconds} сек.`;
+        }, 1000);
+
+        // Счетчик кликов
+        let counter = 0;
+        const nonsikButton = document.getElementById('nonsikButton');
+        const counterDisplay = document.getElementById('counterDisplay');
+
+        nonsikButton.addEventListener('click', () => {
+            counter++;
+            counterDisplay.textContent = `Кликов: ${counter}`;
+        });
+    </script>
+</body>
+</html>
